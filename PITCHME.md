@@ -262,12 +262,22 @@ unbounded data
 #### GenStage: MapReduce
 ![dispatch](https://img.creditx.com/2017-07-07-11-57-39-201777.png)
 ---
-small inputs are common in practice: 40–80% of
+"small inputs are common in practice: 40–80% of
 <br><br><br>
-Cloudera customers’ MapReduce jobs and 70% of jobs in a Facebook trace have ≤ 1GB of input
+Cloudera customers’ MapReduce jobs and 70% of jobs in a Facebook trace have ≤ 1GB of input"
 <br><br><br>
 CHEN, Y., ALSPAUGH, S., AND KATZ, R.
 Interactive analytical processing in big data systems:
 a cross-industry study of MapReduce workloads
 <br><br><br>
+---
+“For between 40-80% of the jobs submitted
+to MapReduce systems, you’d be better off
+<br><br><br>
+just running them on a single machine” 
+<br><br><br>
+GOG, I., SCHWARZKOPF, M., CROOKS, N.,
+GROSVENOR, M. P., CLEMENT, A., AND HAND, S.
+Musketeer: all for one, one for all in data
+processing systems. 
 +++
