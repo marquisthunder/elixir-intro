@@ -18,15 +18,17 @@
     - [Supervisor](#supervisor)
     - [Gen*](#gen)
         - [GenServer](#genserver)
+            - [Erlang Process](#erlang-process)
+            - [handle_call, handle_cast](#handle_call-handle_cast)
         - [GenEvent](#genevent)
         - [GenStage](#genstage)
+            - [GenStage: MapReduce](#genstage-mapreduce)
             - [Word Count](#word-count)
             - [Eager](#eager)
             - [Lazy](#lazy)
             - [Concurrent](#concurrent)
             - [GenStage: Demand-driven](#genstage-demand-driven)
             - [GenStage: Stage](#genstage-stage)
-            - [GenStage: MapReduce](#genstage-mapreduce)
 - [如何学习~~Erlang~~ & Elixir](#erlang-elixir)
 
 +++
@@ -66,7 +68,6 @@ José Valim：Elixir的设计目标可以概括为兼容性、高效率和扩展
 - 一系列设计原则，称为OTP |
 - Erlang虚拟机，称为EVM或BEAM |
 
-![Erlang Process](https://img.creditx.com/2017-07-07-11-23-12-201777.png)
 
 ---
 # Elixir的高效率
@@ -138,11 +139,18 @@ José Valim：Elixir的设计目标可以概括为兼容性、高效率和扩展
 
 ---
 ## Gen*
----
++++
 ### GenServer
+#### Erlang Process
+![Erlang Process](https://img.creditx.com/2017-07-07-11-23-12-201777.png)
+---
+#### handle_call, handle_cast
+![GenServer](https://img.creditx.com/2017-07-07-12-54-44-201777.png)
++++
 ---
 ### GenEvent
 ![GenEvent](https://img.creditx.com/2017-07-07-08-55-57-201777.png)
+---
 +++
 ### GenStage
 Prelude:
@@ -152,7 +160,27 @@ From eager,
 to lazy, to concurrent,
 
 to distributed
-
+---
+#### GenStage: MapReduce
+---
+"small inputs are common in practice: 40–80% of
+<br><br><br>
+Cloudera customers’ MapReduce jobs and 70% of jobs in a Facebook trace have ≤ 1GB of input"
+<br><br><br>
+CHEN, Y., ALSPAUGH, S., AND KATZ, R.
+Interactive analytical processing in big data systems:
+a cross-industry study of MapReduce workloads
+<br><br><br>
+---
+“For between 40-80% of the jobs submitted
+to MapReduce systems, you’d be better off
+<br><br><br>
+just running them on a single machine” 
+<br><br><br>
+GOG, I., SCHWARZKOPF, M., CROOKS, N.,
+GROSVENOR, M. P., CLEMENT, A., AND HAND, S.
+Musketeer: all for one, one for all in data
+processing systems.
 ---
 #### Word Count
 ```
@@ -222,7 +250,6 @@ end)
  “roses" => 1,
  “violets" => 1}
 ```
-+++
 - Give up ordering and process
 locality for concurrency
 - Tools for working with bounded and
@@ -242,28 +269,8 @@ unbounded data
 ---
 #### GenStage: Stage
 ![stage](https://img.creditx.com/2017-07-07-11-55-51-201777.png)
----
-#### GenStage: MapReduce
+==
 ![dispatch](https://img.creditx.com/2017-07-07-11-57-39-201777.png)
----
-"small inputs are common in practice: 40–80% of
-<br><br><br>
-Cloudera customers’ MapReduce jobs and 70% of jobs in a Facebook trace have ≤ 1GB of input"
-<br><br><br>
-CHEN, Y., ALSPAUGH, S., AND KATZ, R.
-Interactive analytical processing in big data systems:
-a cross-industry study of MapReduce workloads
-<br><br><br>
----
-“For between 40-80% of the jobs submitted
-to MapReduce systems, you’d be better off
-<br><br><br>
-just running them on a single machine” 
-<br><br><br>
-GOG, I., SCHWARZKOPF, M., CROOKS, N.,
-GROSVENOR, M. P., CLEMENT, A., AND HAND, S.
-Musketeer: all for one, one for all in data
-processing systems. 
 +++
 ---
 # 如何学习~~Erlang~~ & Elixir
