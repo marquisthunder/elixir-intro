@@ -1,4 +1,4 @@
-# Elixir
+# Elixir Intro
 ![Elixir](https://img.creditx.com/2017-07-07-09-47-00-201777.png)
 
 ![Erlang](https://img.creditx.com/2017-07-07-09-45-51-201777.png)
@@ -40,7 +40,7 @@
 ## Elixir设计者 José Valim
 ![José Valim](https://img.creditx.com/2017-07-07-08-37-27-201777.png)
 ---
-# Elixir擅长并行和分布式应用
+## Elixir擅长并行和分布式应用
 ```
 "99.9999999% reliability (9 nines) (31 ms. year!)"
 http://ll2.ai.mit.edu/talks/armstrong.pdf
@@ -55,13 +55,14 @@ but we did 9.”
 http://www.pragprog.com/articles/erlang
 ```
 +++
+
 +++
-# Elixir的设计目标
+## Elixir的设计目标
 
 José Valim：Elixir的设计目标可以概括为兼容性、高效率和扩展性这几部分。
 
 ---
-# Elixir兼容Erlang
+## Elixir兼容Erlang
 之前已谈到兼容Erlang VM是Elixir的目标之一，当我们谈到Erlang这个词，可以将它分解为下面三部分：
 
 - 一种函数式编程语言Erlang
@@ -70,7 +71,7 @@ José Valim：Elixir的设计目标可以概括为兼容性、高效率和扩展
 
 
 ---
-# Elixir的高效率
+## Elixir的高效率
 - 所有Elixir代码在轻量级进程中运行，包含自己的状态，用于彼此交换信息。Erlang VM将这些进程分配到多个处理器核心中，使代码可以轻松地并行执行。
 
 - Erlang运行时在CPU中的所有核心都在开动。当像Parallel这种技术变得更容易获取且成本更低廉时，你很难忽视Erlang VM所能提供的强大能力。未来Erlang VM将会被用来搭建能永久运行、能自我修复和扩展的系统。 |
@@ -78,15 +79,14 @@ José Valim：Elixir的设计目标可以概括为兼容性、高效率和扩展
 - 效率很难测量，能高效开发桌面应用的编程语言却可能在数学运算领域捉襟见肘，它与你期望从事的领域、生态圈中的可用工具，以及是否能方便地创造和扩展这些工具有关。 |
 
 ---
-# Elixir的可扩展
-- 对于宏系统，只有在一种编程语言的语法能通过它自身的数据结构，以一种很直接的方式表达的情况下才合理。
+## Elixir的可扩展
+- 宏系统，只有在一种编程语言的语法能通过它自身的数据结构，以一种很直接的方式表达的情况下才合理。
 
 - 基于简洁的语言核心，开发者可以构建和扩展针对自己领域的语言。 
     - if
     - with
 
----
-
+例子: <a href="https://zhuanlan.zhihu.com/p/24749368" target="_blank">规则引擎</a>.
 
 +++
 
