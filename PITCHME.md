@@ -26,6 +26,8 @@
             - [Lazy](#lazy)
             - [Concurrent](#concurrent)
             - [GenStage: Demand-driven](#genstage-demand-driven)
+            - [GenStage: Stage](#genstage-stage)
+            - [GenStage: MapReduce](#genstage-mapreduce)
 
 +++
 # Erlang & Elixir
@@ -253,4 +255,19 @@ unbounded data
 - It pushes back-pressure to the boundary
 - GenStage is one impl of this contract
 - Inspired by Akka Streams
+---
+#### GenStage: Stage
+![stage](https://img.creditx.com/2017-07-07-11-55-51-201777.png)
+---
+#### GenStage: MapReduce
+![dispatch](https://img.creditx.com/2017-07-07-11-57-39-201777.png)
+---
+small inputs are common in practice: 40–80% of
+<br><br><br>
+Cloudera customers’ MapReduce jobs and 70% of jobs in a Facebook trace have ≤ 1GB of input
+<br><br><br>
+CHEN, Y., ALSPAUGH, S., AND KATZ, R.
+Interactive analytical processing in big data systems:
+a cross-industry study of MapReduce workloads
+<br><br><br>
 +++
