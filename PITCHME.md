@@ -10,6 +10,7 @@
 - [Elixir的语法](#elixir)
 - [Elixir的设计目标](#elixir)
 - [Elixir的特点](#elixir)
+- [Elixir擅长并行和分布式应用](#elixir)
 - [Elixir的开发体验](#elixir)
 - [OTP Behavior](#otp-behavior)
     - [Supervisor](#supervisor)
@@ -37,28 +38,33 @@
 
 由于Elixir的目的是增强Erlang，所以我在做设计决定时经常向Erlang的语法和语义靠拢，这样就可以帮助开发者更好地融入生态圈。
 
----
-
++++
 # Elixir的设计目标
 
 José Valim：Elixir的设计目标可以概括为兼容性、高效率和扩展性这几部分。
 
 之前已谈到兼容Erlang VM是Elixir的目标之一，当我们谈到Erlang这个词，可以将它分解为下面三部分：
 
-- 一种函数式编程语言Erlang；
-- 一系列设计原则，称为OTP；
-- Erlang虚拟机，称为EVM或BEAM。
+- 一种函数式编程语言Erlang
+- 一系列设计原则，称为OTP |
+- Erlang虚拟机，称为EVM或BEAM |
 
+---
 # Elixir的特点
 - 所有Elixir代码在轻量级进程中运行，包含自己的状态，用于彼此交换信息。Erlang VM将这些进程分配到多个处理器核心中，使代码可以轻松地并行执行。
 
-- Erlang运行时在CPU中的所有核心都在开动。当像Parallel这种技术变得更容易获取且成本更低廉时，你很难忽视Erlang VM所能提供的强大能力。未来Erlang VM将会被用来搭建能永久运行、能自我修复和扩展的系统。
+- Erlang运行时在CPU中的所有核心都在开动。当像Parallel这种技术变得更容易获取且成本更低廉时，你很难忽视Erlang VM所能提供的强大能力。未来Erlang VM将会被用来搭建能永久运行、能自我修复和扩展的系统。 |
 
-- 效率很难测量，能高效开发桌面应用的编程语言却可能在数学运算领域捉襟见肘，它与你期望从事的领域、生态圈中的可用工具，以及是否能方便地创造和扩展这些工具有关。
-尽管基于简洁的语言核心，开发者可以构建和扩展针对自己领域的语言。但Elixir还继承了擅长并行和分布式应用的特点。
+- 效率很难测量，能高效开发桌面应用的编程语言却可能在数学运算领域捉襟见肘，它与你期望从事的领域、生态圈中的可用工具，以及是否能方便地创造和扩展这些工具有关。 |
+
+- 基于简洁的语言核心，开发者可以构建和扩展针对自己领域的语言。 |
 
 ---
+# Elixir擅长并行和分布式应用
 
++++
+
++++
 # Elixir的开发体验
 
 在这些领域，Elixir补充了下面一些标准库：
@@ -72,17 +78,24 @@ José Valim：Elixir的设计目标可以概括为兼容性、高效率和扩展
 
 - 多态记录
 
+- 便于脚本操作的函数，例如路径和文件系统
+
+- 一些用于编译和测试Elixir代码的项目管理工具。
+
+---
+
 - 严格和惰性枚举API
     - Eager
     - Stream
     - Flow
 
-- 便于脚本操作的函数，例如路径和文件系统；
+- 自带分布式基础设施
+    - gossip
+    - multi-paxos
 
-- 一些用于编译和测试Elixir代码的项目管理工具。
-Mix 
+- REPL驱动开发
 
-此外，还有更多库、模块、协议等便于扩展的特性。
++++
 
 ---
 # OTP Behavior
@@ -105,7 +118,7 @@ Mix
 ---
 ### GenEvent
 ![GenEvent](https://img.creditx.com/2017-07-07-08-55-57-201777.png)
----
++++
 ### GenStage
 Prelude:
 
@@ -201,4 +214,4 @@ unbounded data
 - It pushes back-pressure to the boundary
 - GenStage is one impl of this contract
 - Inspired by Akka Streams
----
++++
