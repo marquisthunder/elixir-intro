@@ -19,6 +19,8 @@
         - [GenStage](#genstage)
             - [Word Count](#word-count)
             - [Eager](#eager)
+            - [Lazy](#lazy)
+            - [Concurrent](#concurrent)
             - [GenStage: Demand-driven](#genstage-demand-driven)
 
 ---
@@ -141,6 +143,52 @@ end)
  “roses" => 1,
  “violets" => 1}
 ```
++++
+- Simple
+- Efficient for small collections
+- Inefficient for large collections with multiple passes
+---
+#### Lazy
+```
+File.stream!("source", :line)
+|> Stream.flat_map(&String.split/1)
+|> Enum.reduce(%{}, fn word, map ->
+ Map.update(map, word, 1, & &1 + 1)
+end)
+↓
+%{“are” => 2,
+ “blue” => 1,
+ “red” => 1,
+ “roses" => 1,
+ “violets" => 1}
+```
++++
+- Folds computations, goes item by item
+- Less memory usage at the cost of computation
+- Allows us to work with large or infinite collections
+---
+#### Concurrent
+```
+File.stream!("source", :line)
+|> Flow.from_enumerable()
+|> Flow.flat_map(&String.split/1)
+|> Flow.partition()
+|> Flow.reduce(fn -> %{} end, fn word, map ->
+ Map.update(map, word, 1, & &1 + 1)
+end)
+|> Enum.into(%{})
+↓
+%{“are” => 2,
+ “blue” => 1,
+ “red” => 1,
+ “roses" => 1,
+ “violets" => 1}
+```
++++
+- Give up ordering and process
+locality for concurrency
+- Tools for working with bounded and
+unbounded data
 ---
 ![GenStage](https://img.creditx.com/2017-07-07-08-58-49-201777.png)
 ---
