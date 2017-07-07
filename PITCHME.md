@@ -29,18 +29,24 @@
             - [Concurrent](#concurrent)
             - [GenStage: Demand-driven](#genstage-demand-driven)
             - [GenStage: Stage](#genstage-stage)
-- [如何学习~~Erlang~~ & Elixir](#erlang-elixir)
+- [如何学习~~Erlang &~~ Elixir](#erlang-elixir)
 
 +++
 # Erlang & Elixir
 
-## Erlang设计者 Joe Armstrong
+<a href="https://www.wired.com/2015/09/whatsapp-serves-900-million-users-50-engineers" target="_blank">WHY WHATSAPP ONLY NEEDS 50 ENGINEERS FOR ITS 900M USERS</a>
+
 ![Joe](https://img.creditx.com/2017-07-07-11-39-42-201777.png)
+
+<a href="http://joearms.github.io" target="_blank">Erlang设计者 Joe Armstrong</a>
+
 ---
-## Elixir设计者 José Valim
+
 ![José Valim](https://img.creditx.com/2017-07-07-08-37-27-201777.png)
+
+Elixir设计者 José Valim
 ---
-## Elixir擅长并行和分布式应用
+## 并行和分布式应用
 ```
 "99.9999999% reliability (9 nines) (31 ms. year!)"
 http://ll2.ai.mit.edu/talks/armstrong.pdf
@@ -54,6 +60,10 @@ downtime/year). 7 nines almost unachievable …
 but we did 9.”
 http://www.pragprog.com/articles/erlang
 ```
+---
+Elixir设计了一种非常简洁的语法，而后逐步增加层次，这部分灵感大多来自Ruby和Erlang中的惯用法。
+
+由于Elixir的目的是增强Erlang，所以我在做设计决定时经常向Erlang的语法和语义靠拢，这样就可以帮助开发者更好地融入生态圈。
 +++
 
 +++
@@ -275,9 +285,6 @@ unbounded data
 ---
 # 如何学习~~Erlang~~ & Elixir
 
-Elixir设计了一种非常简洁的语法，而后逐步增加层次，这部分灵感大多来自Ruby和Erlang中的惯用法。
-
-由于Elixir的目的是增强Erlang，所以我在做设计决定时经常向Erlang的语法和语义靠拢，这样就可以帮助开发者更好地融入生态圈。
 
 对于学习曲线的问题，没办法，谁让你不得不同时在学四件事情呢：
 - 语法;
@@ -286,5 +293,7 @@ Elixir设计了一种非常简洁的语法，而后逐步增加层次，这部�
 - 一套实用的设计模式
 
 然而，这些付出的代价是值得的，它将你的系统级设计能力和分布式软件系统开发的能力提升了一个档次。即便你不用erlang，这个代价也很值得，你可以把它的很多思想带入你所熟悉的语言中去解决问题。
+
+"We expect the engineer to come in and spend their first week getting familiar with the language and learning to use the environment. If you hire smart people, they'll be able to do that."
 
 ---
