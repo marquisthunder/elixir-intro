@@ -9,13 +9,16 @@
     - [José Valim](#jos-valim)
 - [Elixir的语法](#elixir)
 - [Elixir的设计目标](#elixir)
-- [Elixir 开发体验](#elixir)
+- [Elixir的特点](#elixir)
+- [Elixir的开发体验](#elixir)
 - [OTP Behavior](#otp-behavior)
     - [Supervisor](#supervisor)
     - [Gen*](#gen)
         - [GenServer](#genserver)
         - [GenEvent](#genevent)
         - [GenStage](#genstage)
+            - [Word Count](#word-count)
+            - [Eager](#eager)
             - [GenStage: Demand-driven](#genstage-demand-driven)
 
 ---
@@ -44,17 +47,17 @@ José Valim：Elixir的设计目标可以概括为兼容性、高效率和扩展
 - 一系列设计原则，称为OTP；
 - Erlang虚拟机，称为EVM或BEAM。
 
+# Elixir的特点
 - 所有Elixir代码在轻量级进程中运行，包含自己的状态，用于彼此交换信息。Erlang VM将这些进程分配到多个处理器核心中，使代码可以轻松地并行执行。
 
-- 如果你编译Elixir代码，会发现CPU中的所有核心都在开动。当像Parallella这种技术变得更容易获取且成本更低廉时，你很难忽视Erlang VM所能提供的强大能力。未来Erlang VM将会被用来搭建能永久运行、能自我修复和扩展的系统。
+- Erlang运行时在CPU中的所有核心都在开动。当像Parallel这种技术变得更容易获取且成本更低廉时，你很难忽视Erlang VM所能提供的强大能力。未来Erlang VM将会被用来搭建能永久运行、能自我修复和扩展的系统。
 
 - 效率很难测量，能高效开发桌面应用的编程语言却可能在数学运算领域捉襟见肘，它与你期望从事的领域、生态圈中的可用工具，以及是否能方便地创造和扩展这些工具有关。
-
 尽管基于简洁的语言核心，开发者可以构建和扩展针对自己领域的语言。但Elixir还继承了擅长并行和分布式应用的特点。
 
 ---
 
-# Elixir 开发体验
+# Elixir的开发体验
 
 在这些领域，Elixir补充了下面一些标准库：
 
@@ -62,11 +65,15 @@ José Valim：Elixir的设计目标可以概括为兼容性、高效率和扩展
 
 - 强大的单元测试框架
 ![2017-07-07-08-50-09-201777](https://img.creditx.com/2017-07-07-08-50-09-201777.png)
+
 - 更多数据类型
 
 - 多态记录
 
-- 严格和惰性枚举API；
+- 严格和惰性枚举API
+    - Eager
+    - Stream
+    - Flow
 
 - 便于脚本操作的函数，例如路径和文件系统；
 
@@ -98,6 +105,42 @@ Mix
 ![GenEvent](https://img.creditx.com/2017-07-07-08-55-57-201777.png)
 ---
 ### GenStage
+Prelude:
+
+From eager,
+
+to lazy, to concurrent,
+
+to distributed
+
+---
+#### Word Count
+```
+“roses are red\n
+violets are blue\n"
+↓
+%{“are” => 2,
+“blue” => 1,
+“red” => 1,
+“roses" => 1,
+“violets" => 1}
+```
+---
+#### Eager
+```
+File.read!("source")
+|> String.split("\n")
+|> Enum.flat_map(&String.split/1)
+|> Enum.reduce(%{}, fn word, map ->
+ Map.update(map, word, 1, & &1 + 1)
+end)
+↓
+%{“are” => 2,
+ “blue” => 1,
+ “red” => 1,
+ “roses" => 1,
+ “violets" => 1}
+```
 ---
 ![GenStage](https://img.creditx.com/2017-07-07-08-58-49-201777.png)
 ---
