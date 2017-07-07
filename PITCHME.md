@@ -6,14 +6,13 @@
 ---
 - [Elixir](#elixir)
 - [Erlang & Elixir](#erlang-elixir)
-    - [Joe Armstrong](#joe-armstrong)
-    - [José Valim](#jos-valim)
-- [Elixir的语法](#elixir)
+    - [Erlang设计者 Joe Armstrong](#erlang-joe-armstrong)
+    - [Elixir设计者 José Valim](#elixir-jos-valim)
+- [Elixir擅长并行和分布式应用](#elixir)
 - [Elixir的设计目标](#elixir)
 - [Elixir兼容Erlang](#elixir-erlang)
 - [Elixir的高效率](#elixir)
 - [Elixir的可扩展](#elixir)
-- [Elixir擅长并行和分布式应用](#elixir)
 - [Elixir的开发体验](#elixir)
 - [OTP Behavior](#otp-behavior)
     - [Supervisor](#supervisor)
@@ -28,21 +27,18 @@
             - [GenStage: Demand-driven](#genstage-demand-driven)
             - [GenStage: Stage](#genstage-stage)
             - [GenStage: MapReduce](#genstage-mapreduce)
+- [如何学习~~Erlang~~ & Elixir](#erlang-elixir)
 
 +++
 # Erlang & Elixir
 
-## Joe Armstrong
-Erlang设计者
+## Erlang设计者 Joe Armstrong
 ![Joe](https://img.creditx.com/2017-07-07-11-39-42-201777.png)
-![Video](https://www.youtube.com/watch?v=uKfKtXYLG78)
 ---
-## José Valim
-Elixir设计者，Rails核心团队成员，Plataformatec联合创始人
-
+## Elixir设计者 José Valim
 ![José Valim](https://img.creditx.com/2017-07-07-08-37-27-201777.png)
 ---
-
+# Elixir擅长并行和分布式应用
 ```
 "99.9999999% reliability (9 nines) (31 ms. year!)"
 http://ll2.ai.mit.edu/talks/armstrong.pdf
@@ -57,16 +53,6 @@ but we did 9.”
 http://www.pragprog.com/articles/erlang
 ```
 +++
----
-# Elixir的语法
-
-对于宏系统，只有在一种编程语言的语法能通过它自身的数据结构，以一种很直接的方式表达的情况下才合理。
-
-设计了一种非常简洁的语法，而后逐步增加层次，这部分灵感大多来自Ruby和Erlang中的惯用法。
-
-由于Elixir的目的是增强Erlang，所以我在做设计决定时经常向Erlang的语法和语义靠拢，这样就可以帮助开发者更好地融入生态圈。
-
----
 +++
 # Elixir的设计目标
 
@@ -92,15 +78,13 @@ José Valim：Elixir的设计目标可以概括为兼容性、高效率和扩展
 
 ---
 # Elixir的可扩展
+- 对于宏系统，只有在一种编程语言的语法能通过它自身的数据结构，以一种很直接的方式表达的情况下才合理。
+
 - 基于简洁的语言核心，开发者可以构建和扩展针对自己领域的语言。 
     - if
     - with
 
-- 生态
-
 ---
-# Elixir擅长并行和分布式应用
-对于学习曲线的问题，没办法，谁让你不得不同时在学四件事情呢：erlang语法; 函数式语言的编程思想；一个几乎等同于操作系统的 VM；以及一套实用的设计模式。然而，这些付出的代价是值得的，它将你的系统级设计能力和分布式软件系统开发的能力提升了一个档次。即便你不用 erlang，这个代价也很值得，你可以把它的很多思想带入你所熟悉的语言中去解决问题。
 
 
 +++
@@ -281,3 +265,19 @@ GROSVENOR, M. P., CLEMENT, A., AND HAND, S.
 Musketeer: all for one, one for all in data
 processing systems. 
 +++
+---
+# 如何学习~~Erlang~~ & Elixir
+
+Elixir设计了一种非常简洁的语法，而后逐步增加层次，这部分灵感大多来自Ruby和Erlang中的惯用法。
+
+由于Elixir的目的是增强Erlang，所以我在做设计决定时经常向Erlang的语法和语义靠拢，这样就可以帮助开发者更好地融入生态圈。
+
+对于学习曲线的问题，没办法，谁让你不得不同时在学四件事情呢：
+- 语法;
+- 函数式语言的编程思想；
+- 一个几乎等同于操作系统的VM；
+- 一套实用的设计模式
+
+然而，这些付出的代价是值得的，它将你的系统级设计能力和分布式软件系统开发的能力提升了一个档次。即便你不用erlang，这个代价也很值得，你可以把它的很多思想带入你所熟悉的语言中去解决问题。
+
+---
