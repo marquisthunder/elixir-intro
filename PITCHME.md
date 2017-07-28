@@ -44,8 +44,10 @@
 
 ![José Valim](https://img.creditx.com/2017-07-07-08-37-27-201777.png)
 
-Elixir设计者 José Valim
+<a href="http://joearms.github.io" target="_blank">Elixir设计者 José Valim</a>
+
 ---
+
 ## 并行和分布式应用
 ```
 "99.9999999% reliability (9 nines) (31 ms. year!)"
@@ -63,7 +65,7 @@ http://www.pragprog.com/articles/erlang
 ---
 Elixir设计了一种非常简洁的语法，而后逐步增加层次，这部分灵感大多来自Ruby和Erlang中的惯用法。
 
-由于Elixir的目的是增强Erlang，所以我在做设计决定时经常向Erlang的语法和语义靠拢，这样就可以帮助开发者更好地融入生态圈。
+由于Elixir的目的是增强Erlang，所以在做设计决定时经常向Erlang的语法和语义靠拢，这样就可以帮助开发者更好地融入生态圈。
 +++
 
 +++
@@ -79,8 +81,8 @@ José Valim：Elixir的设计目标可以概括为兼容性、高效率和扩展
 - 一系列设计原则，称为OTP |
 - Erlang虚拟机，称为EVM或BEAM |
 
-
 ---
+
 ## Elixir的高效率
 - 所有Elixir代码在轻量级进程中运行，包含自己的状态，用于彼此交换信息。Erlang VM将这些进程分配到多个处理器核心中，使代码可以轻松地并行执行。
 
@@ -140,8 +142,11 @@ José Valim：Elixir的设计目标可以概括为兼容性、高效率和扩展
 ---
 ## Supervisor
 - one_for_one
+![Erlang Process](https://img.creditx.com/sup-oneforone.gif)
 - one_for_all
+![Erlang Process](https://img.creditx.com/sup-oneforall.gif)
 - rest_for_all
+![Erlang Process](https://img.creditx.com/sup-restforall.gif)
 - simple_one_for_one
     - Used for spawning children dynamically
     - init/1 must return a single child
