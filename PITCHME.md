@@ -49,19 +49,20 @@
 ---
 
 ## 并行和分布式应用
-```
-"99.9999999% reliability (9 nines) (31 ms. year!)"
-http://ll2.ai.mit.edu/talks/armstrong.pdf
-```
-```
-“The AXD301 has achieved a NINE nines
+> "99.9999999% reliability (9 nines) (31 ms. year!)"
+
+> http://ll2.ai.mit.edu/talks/armstrong.pdf
+
+> “The AXD301 has achieved a NINE nines
 reliability (yes, you read that right,
-99.9999999%). Let’s put this in context: 5 nines
+*99.9999999%*).
+> Let’s put this in context: 5 nines
 is reckoned to be good (5.2 minutes of
 downtime/year). 7 nines almost unachievable …
 but we did 9.”
-http://www.pragprog.com/articles/erlang
-```
+
+> http://www.pragprog.com/articles/erlang
+
 ---
 Elixir设计了一种非常简洁的语法，而后逐步增加层次，这部分灵感大多来自Ruby和Erlang中的惯用法。
 
@@ -178,21 +179,20 @@ to distributed
 ---
 #### GenStage: MapReduce
 ---
-"small inputs are common in practice: 40–80% of
-<br><br><br>
-Cloudera customers’ MapReduce jobs and 70% of jobs in a Facebook trace have ≤ 1GB of input"
-<br><br><br>
-CHEN, Y., ALSPAUGH, S., AND KATZ, R.
+> "small inputs are common in practice: 40–80% of
+
+> Cloudera customers’ MapReduce jobs and 70% of jobs in a Facebook trace have ≤ 1GB of input"
+
+> CHEN, Y., ALSPAUGH, S., AND KATZ, R.
 Interactive analytical processing in big data systems:
 a cross-industry study of MapReduce workloads
-<br><br><br>
 ---
-“For between 40-80% of the jobs submitted
+> “For between 40-80% of the jobs submitted
 to MapReduce systems, you’d be better off
-<br><br><br>
-just running them on a single machine” 
-<br><br><br>
-GOG, I., SCHWARZKOPF, M., CROOKS, N.,
+
+> just running them on a single machine” 
+
+> GOG, I., SCHWARZKOPF, M., CROOKS, N.,
 GROSVENOR, M. P., CLEMENT, A., AND HAND, S.
 Musketeer: all for one, one for all in data
 processing systems.
@@ -290,7 +290,6 @@ unbounded data
 ---
 # 如何学习~~Erlang~~ & Elixir
 
-
 对于学习曲线的问题，没办法，谁让你不得不同时在学四件事情呢：
 - 语法;
 - 函数式语言的编程思想；
@@ -299,6 +298,6 @@ unbounded data
 
 然而，这些付出的代价是值得的，它将你的系统级设计能力和分布式软件系统开发的能力提升了一个档次。即便你不用erlang，这个代价也很值得，你可以把它的很多思想带入你所熟悉的语言中去解决问题。
 
-"We expect the engineer to come in and spend their first week getting familiar with the language and learning to use the environment. If you hire smart people, they'll be able to do that."
+> "We expect the engineer to come in and spend their first week getting familiar with the language and learning to use the environment. If you hire smart people, they'll be able to do that."
 
 ---
